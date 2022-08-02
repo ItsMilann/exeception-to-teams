@@ -38,10 +38,12 @@ INSTALLED_APPS = [
 
 MIDDLEWARES =[
 ...
-'exeception_to_teams.middleware.ExeceptionMiddleware'
+'exeception_to_teams.middlewares.ExeceptionMiddleware'
 ]
 
 TEAMS_CHANNEL_URL = os.envion.get("TEAMS_CHANNEL_URL")
+
+PROJECT_NAME = "Project X" # Uses this value in card title.
 ```
 
 Generate an exeception intentionally in your django application and check log in your teams channel.

@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: exeception-to-teams
-Version: 0.0.2
+Version: 0.0.3
 Summary: Notification/Alert for django users
 Author: Ideabreed Technology (Milann Malla)
 Author-email: <hello@itsmilann.com>
@@ -56,10 +56,12 @@ INSTALLED_APPS = [
 
 MIDDLEWARES =[
 ...
-'exeception_to_teams.middleware.ExeceptionMiddleware'
+'exeception_to_teams.middlewares.ExeceptionMiddleware'
 ]
 
 TEAMS_CHANNEL_URL = os.envion.get("TEAMS_CHANNEL_URL")
+
+PROJECT_NAME = "Project X" # Uses this value in card title.
 ```
 
 Generate an exeception intentionally in your django application and check log in your teams channel.

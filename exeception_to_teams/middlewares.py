@@ -18,6 +18,10 @@ try:
 except AttributeError as e:
     raise AttributeError("You must define 'TEAMS_CHANNEL_URL' in your settings") from e
 
+try:
+    PROJECT_NAME = settings.PROJECT_NAME
+except AttributeError as e:
+    PROJECT_NAME = "Django Project"
 
 class ExeceptionMiddleware:
     """Add this middleware in your middleware's list
@@ -75,8 +79,8 @@ class ExeceptionMiddleware:
         data = {
             "@type": "MessageCard",
             "@context": "http://schema.org/extensions",
-            "title": f"An Exception Occurred in {settings.PROJECT_NAME}",
-            "summary": f"An Exception Occurred in {settings.PROJECT_NAME}",
+            "title": f"An Exception Occurred in {PROJECT_NAME}",
+            "summary": f"An Exception Occurred in {PROJECT_NAME}",
             "sections": [
                 {
                     "activityTitle": f"{user['username']}",
